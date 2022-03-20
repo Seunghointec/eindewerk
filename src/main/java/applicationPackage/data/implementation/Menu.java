@@ -15,6 +15,10 @@ public class Menu {
     private double price;
     private MenuType menuType;
 
+    public Menu() {
+
+    }
+
     public Menu(Long itemID, String name, String description, double price, MenuType menuType) {
         this.itemID = itemID;
         this.name = name;
@@ -22,6 +26,7 @@ public class Menu {
         this.price = price;
         this.menuType = menuType;
     }
+
 
     public Long getId() {
         return itemID;

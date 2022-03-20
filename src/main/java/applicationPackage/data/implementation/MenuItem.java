@@ -8,9 +8,9 @@ public class MenuItem implements CostRelated {
     private String name;
     private String description;
     private double price;
-    private MenuItem menuItemType;
+    private MenuType menuItemType;
 
-    public MenuItem(int itemID, String name, String description, double price, MenuItem menuItemType) {
+    public MenuItem(int itemID, String name, String description, double price, MenuType menuItemType) {
         this.itemID = itemID;
         this.name = name;
         this.description = description;
@@ -50,17 +50,29 @@ public class MenuItem implements CostRelated {
         this.price = price;
     }
 
-    public MenuItem getMenuItemType() {
+    public MenuType getMenuItemType() {
         return menuItemType;
     }
 
-    public void setMenuItemType(MenuItem menuItemType) {
+    public void setMenuItemType(MenuType menuItemType) {
         this.menuItemType = menuItemType;
     }
 
     @Override
     public void display() {
-        System.out.println(this.itemID+" "+this.menuItemType.getName()+" | "+this.price);
+        System.out.println(this.itemID+" "+getMenuItemType()+" | "+this.price + " "
+                + this.description + " " + this.name);
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "itemID=" + itemID +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", menuItemType=" + menuItemType +
+                '}';
     }
 
     @Override
